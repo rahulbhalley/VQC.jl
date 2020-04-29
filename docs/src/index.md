@@ -10,7 +10,7 @@ hybrid quantum-classical algorithms. Current VQC also has a basic support
 for variational Hamiltonian simulation.
 
 A simple code snippet to create a two-qubit bell state
-```@example
+```julia
 push!(LOAD_PATH, "../../src")
 using VQC
 
