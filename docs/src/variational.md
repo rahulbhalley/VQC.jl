@@ -5,7 +5,7 @@ use VQC to build variational quantum circuits
 
 
 ## Creating a variational quantum circuit
-```@example
+```julia
 push!(LOAD_PATH, "../../src")
 using VQC
 L = 3
@@ -42,12 +42,12 @@ loss(c) = distance(target_state, c * initial_state)
 grad = gradient(loss, circuit)
 ```
 The above definition has been predefined by the function variational_circuit
-```@docs
+```julia
 variational_circuit(L::Int, depth::Int, g::Function=rand)
 ```
 
 ## A simple application of VQC and Flux
-```@example
+```julia
 using VQC
 using Zygote
 using Flux.Optimise
@@ -69,7 +69,7 @@ end
 ```
 
 ## Some utility functions
-```@docs
+```@docs(julia)
 collect_variables(args...)
 parameters(args...)
 set_parameters!(coeff::AbstractVector{<:Number}, args...)
