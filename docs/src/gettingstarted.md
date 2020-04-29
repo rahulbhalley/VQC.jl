@@ -8,7 +8,7 @@ Pipeline for quantum circuit simulation
 
 ## Initialize a quantum state
 Definition of function qstate
-```@docs
+``julia`
 qstate(::Type{T}, thetas::AbstractVector{<:Real}) where {T <: Number}
 qstate(thetas::AbstractVector{<:Real})
 qstate(::Type{T}, n::Int) where {T <: Number}
@@ -22,7 +22,7 @@ amplitudes(s::AbstractVector)
 
 
 Examples
-```@example
+```julia
 push!(LOAD_PATH, "../../src")
 using VQC
 state = qstate(2)
@@ -34,7 +34,7 @@ state = qstate([0.5, 0.7])
 ## Quantum gate
 Predefined elementary gates "X, Y, Z, S, H, sqrtX, sqrtY, T, Rx, Ry, Rz, CONTROL, CZ, CNOT, CX, SWAP, iSWAP, XGate, YGate, ZGate, HGate, SGate, TGate, SqrtXGate, SqrtYGate, RxGate, RyGate, RzGate, CZGate, CNOTGate, SWAPGate, iSWAPGate, CRxGate, CRyGate, CRzGate, TOFFOLIGate"
 
-```@example
+```julia
 using VQC
 
 circuit = QCircuit()
@@ -65,7 +65,7 @@ push!(circuit, RxGate(1, 0.5))
 
 ## Quantum circuit
 Adding new gates
-```@docs
+```julia
 add!(x::AbstractCircuit, s)
 Base.push!(x::AbstractCircuit, s::AbstractGate)
 Base.append!(x::AbstractCircuit, y::AbstractCircuit)
@@ -73,7 +73,7 @@ Base.append!(x::AbstractCircuit, y::Vector{T}) where {T<:AbstractGate}
 ```
 
 Circuit manipulations
-```@example
+```julia
 using VQC
 circuit = QCircuit()
 push!(circuit, (1, H))
@@ -84,7 +84,7 @@ c3 = circuit'
 ```
 
 ## Apply quantum circuit to state
-```@docs
+```julia
 apply!(circuit::AbstractCircuit, v::Vector)
 *(circuit::AbstractCircuit, v::AbstractVector)
 *(v::AbstractVector, circuit::AbstractCircuit)
@@ -92,13 +92,13 @@ apply!(circuit::AbstractCircuit, v::Vector)
 
 ## Quantum measurement
 Measure and collapse a quantum state
-```@docs
+```julia
 measure(qstate::AbstractVector, pos::Int)
 measure!(qstate::AbstractVector, pos::Int; auto_reset::Bool=true)
 ```
 
 Postselection
-```@docs
+```julia
 post_select!(qstate::AbstractVector, key::Int, state::Int=0)
 post_select(qstate::AbstractVector, key::Int, state::Int=0; keep::Bool=false)
 ```

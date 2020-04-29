@@ -31,7 +31,7 @@ p = amplitude(state, [0, 1])
 ```
 
 Build a variational quantum circuit is as simple as a normal quantum state
-```@example
+``julia`
 using VQC
 using Zygote
 L = 3
