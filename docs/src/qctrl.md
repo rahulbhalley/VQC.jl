@@ -4,12 +4,12 @@
 
 VQC support variational hamiltonian evolutions.
 
-```@docs
+```julia
 ctrlham(a::AbstractMatrix, b::Vector{<:AbstractMatrix}, nparas::Int)
 ```
 
 The variational hamiltonian object can be used in the same way as a variational quantum circuit
-```@example
+```julia
 push!(LOAD_PATH, "../../src")
 using VQC
 using Zygote
