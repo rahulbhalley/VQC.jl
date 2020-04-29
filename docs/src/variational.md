@@ -69,7 +69,7 @@ end
 ```
 
 ## Some utility functions
-```@docs(julia)
+```julia
 collect_variables(args...)
 parameters(args...)
 set_parameters!(coeff::AbstractVector{<:Number}, args...)
